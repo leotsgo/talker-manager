@@ -1,6 +1,6 @@
 import { Router, Request, Response } from 'express';
 
-import { validateToken, validateName, validateAge, validateTalk, validateTalkContent, createTalker } from '../middlewares';
+import { validateToken, validateName, validateAge, validateTalk, validateTalkContent, createTalker, editTalker } from '../middlewares';
 
 const readFile = require('../utils/readFile');
 
@@ -28,4 +28,5 @@ router.get('/:id', async (req: Request, res: Response) => {
 
 router.post('/', validateToken, validateName, validateAge, validateTalk, validateTalkContent, createTalker);
 
+router.put('/:id', validateToken, validateName, validateAge, validateTalk, validateTalkContent, editTalker);
 export default router;
