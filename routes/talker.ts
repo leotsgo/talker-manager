@@ -1,12 +1,14 @@
 import { Router, Request, Response } from 'express';
 
-import { validateToken, validateName, validateAge, validateTalk, validateTalkContent, createTalker, editTalker, deleteTalker } from '../middlewares';
+import { validateToken, validateName, validateAge, validateTalk, validateTalkContent, createTalker, editTalker, deleteTalker, searchTalker } from '../middlewares';
 
 const readFile = require('../utils/readFile');
 
 const router = Router();
 
 import { Talker } from '../interfaces/Talker';
+
+router.get('/search', validateToken, searchTalker);
 
 router.get('/', async (_req: Request, res: Response) => {
   const talkers = await readFile('./talker.json');
@@ -25,10 +27,13 @@ router.get('/:id', async (req: Request, res: Response) => {
   return res.status(200).json(talker);
 });
 
+
+
 router.post('/', validateToken, validateName, validateAge, validateTalk, validateTalkContent, createTalker);
 
 router.put('/:id', validateToken, validateName, validateAge, validateTalk, validateTalkContent, editTalker);
 
 router.delete('/:id', validateToken, deleteTalker);
+
 
 export default router;
