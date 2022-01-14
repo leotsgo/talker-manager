@@ -12,6 +12,12 @@ app.get('/', (_request: Request, response: Response) => {
   response.status(HTTP_OK_STATUS).send();
 });
 
+// Rota /talker
+
+import talkerRoute from './routes/talker';
+
+app.use('/talker', talkerRoute);
+
 app.listen(PORT, () => {
   console.log('Online');
 });
