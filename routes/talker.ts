@@ -1,6 +1,6 @@
 import { Router, Request, Response } from 'express';
 
-import { validateToken, validateName, validateAge, validateTalk, validateTalkContent, createTalker, editTalker } from '../middlewares';
+import { validateToken, validateName, validateAge, validateTalk, validateTalkContent, createTalker, editTalker, deleteTalker } from '../middlewares';
 
 const readFile = require('../utils/readFile');
 
@@ -24,6 +24,8 @@ router.get('/:id', async (req: Request, res: Response) => {
 
   return res.status(200).json(talker);
 });
+
+router.delete('/:id', validateToken, deleteTalker);
 
 
 router.post('/', validateToken, validateName, validateAge, validateTalk, validateTalkContent, createTalker);

@@ -7,3 +7,4 @@ export { default as validateAge } from './validateAge';
 export { default as validateTalkContent } from './validateTalkContent';
 export { default as createTalker } from './createTalker';
 export { default as editTalker } from './editTalker';
+export { default as deleteTalker } from './deleteTalker';
