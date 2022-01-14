@@ -1,7 +1,7 @@
 import { Router, Request, Response } from 'express';
 import crypto from 'crypto';
 import { validateEmail, validatePassword } from '../middlewares/index';
-
+// teste
 const router = Router();
 
 router.use(validateEmail, validatePassword);
