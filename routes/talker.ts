@@ -25,10 +25,10 @@ router.get('/:id', async (req: Request, res: Response) => {
   return res.status(200).json(talker);
 });
 
-router.delete('/:id', validateToken, deleteTalker);
-
-
 router.post('/', validateToken, validateName, validateAge, validateTalk, validateTalkContent, createTalker);
 
 router.put('/:id', validateToken, validateName, validateAge, validateTalk, validateTalkContent, editTalker);
+
+router.delete('/:id', validateToken, deleteTalker);
+
 export default router;
