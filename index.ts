@@ -1,5 +1,6 @@
 import express, { Request, Response } from 'express';
 const bodyParser = require('body-parser');
+import talkerRoute from './routes/talker';
 
 const app: express.Application = express();
 app.use(bodyParser.json());
@@ -13,9 +14,6 @@ app.get('/', (_request: Request, response: Response) => {
 });
 
 // Rota /talker
-
-import talkerRoute from './routes/talker';
-
 app.use('/talker', talkerRoute);
 
 app.listen(PORT, () => {
