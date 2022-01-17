@@ -1,8 +1,9 @@
 import fs from 'fs/promises';
+import { Talker } from '../interfaces/Talker';
 
-const writeFile = (path: string, content: []): void => {
+const writeFile = (path: string, content: Talker[]): Promise<void> => {
   const data = JSON.stringify(content);
-  fs.writeFile(path, data);
-}
+  return fs.writeFile(path, data);
+};
 
-module.exports = writeFile;
+export default writeFile;

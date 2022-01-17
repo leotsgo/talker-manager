@@ -1,12 +1,12 @@
-import { Request, Response, NextFunction } from 'express';
+import { Request, Response } from 'express';
 import { Talker } from '../interfaces/Talker';
-const readFile = require('../utils/readFile');
-const writeFile = require('../utils/writeFile');
+import readFile from '../utils/readFile';
+import writeFile from '../utils/writeFile';
 
 const createTalker = async (req: Request, res: Response) => {
-  const talker  = req.body;
-  let talkers: Talker[] = await readFile('./talker.json');
-  const id = talkers[talkers.length - 1].id + 1;
+  const talker = req.body;
+  const talkers: Talker[] = await readFile('./talker.json');
+  const id: number = talkers[talkers.length - 1].id + 1;
 
   const newTalker: Talker = { id, ...talker };
 

@@ -1,8 +1,7 @@
-import { Router, Request, Response } from 'express';
-const readFile = require('../utils/readFile');
-const writeFile = require('../utils/writeFile');
-
+import { Request, Response } from 'express';
 import { Talker } from '../interfaces/Talker';
+import readFile from '../utils/readFile';
+import writeFile from '../utils/writeFile';
 
 const editTalker = async (req: Request, res: Response) => {
   const { id } = req.params;
