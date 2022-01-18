@@ -1,9 +1,9 @@
-import express, { Request, Response } from 'express';
-const bodyParser = require('body-parser');
+import express, { Request, Response, Application } from 'express';
+import bodyParser from 'body-parser';
 import talkerRoute from './routes/talker';
 import loginRoute from './routes/login';
 
-const app: express.Application = express();
+const app: Application = express();
 app.use(bodyParser.json());
 
 const HTTP_OK_STATUS = 200;
