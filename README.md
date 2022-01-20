@@ -3,7 +3,7 @@
 # Contexto
 Esse projeto foi feito no bloco 22 do módulo de Desenvolvimento Web da Trybe. A aplicação é um sistema de gerenciamento de palestras, onde o usuário pode cadastrar palestras e palestrantes. Originalmente, o projeto foi feito em Javascript Vanilla, mas aproveitei para estudar os conceitos de Typescript e aplicar aqui.
 
-## Técnologias usadas
+## Tecnologias usadas
 
 Typescript e Express
 
